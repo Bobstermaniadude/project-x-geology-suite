@@ -6,9 +6,9 @@
 
 ---
 
-## 🔬 Modules
+##  Modules
 
-### ✅ teXtonics — *Available Now*
+### teXtonics — *In Development*
 A realistic 3D plate tectonics simulator.
 - Dynamic crust-cell advection
 - Convergent collisions & oceanic subductions
@@ -16,18 +16,18 @@ A realistic 3D plate tectonics simulator.
 - Fully customizable plate structures
 - Real-time 3D globe rendering
 
-### 🗺️ Plate Textures — *Available Now*
+### Plate Textures — *Available Now*
 Individual tectonic plate PNG textures in equirectangular projection.
 - Available at 2K, 4K & 8K resolution
 - Ready for 3D globe mapping and simulation pipelines
 
-### 🔧 seismologyX — *In Development*
+### seismologyX — *In Development*
 Interactive seismic wave propagator.
 - Model P and S waves through planetary interiors
 - Customize core compositions
 - Map global shadow zones in real-time
 
-### 🌋 volcanoX — *In Development*
+### volcanoX — *In Development*
 Thermodynamic volcanic eruptive builder.
 - Simulate magma chamber pressure & gas solubility
 - Viscosity dynamics
@@ -35,7 +35,7 @@ Thermodynamic volcanic eruptive builder.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -47,7 +47,7 @@ Thermodynamic volcanic eruptive builder.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js >= 18
@@ -73,7 +73,7 @@ npm run preview
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Geology Suite/
@@ -96,14 +96,14 @@ Geology Suite/
 
 ---
 
-## 👥 Created By
+## Created By
 
 - **Skanda Ramanathan**
 - **Srivarenya Vempati**
 
 ---
 
-## 📄 License
+## License
 
 This project is currently unlicensed. All rights reserved.
 
