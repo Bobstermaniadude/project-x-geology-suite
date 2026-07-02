@@ -1,0 +1,74 @@
+/* Geology Suite — Design Tokens */
+:root {
+  /* Color — Primary palette */
+  --color-basalt: #1c1917;
+  --color-shale: #2a2520;
+  --color-parchment: #f2ebe0;
+  --color-ink: #1a1612;
+  --color-brass: #b8956b;
+  --color-brass-deep: #8a6f47;
+  --color-verdigris: #2a9d8f;
+  --color-rust: #8b4513;
+  --color-survey-red: #9b2335;
+  --color-slate: #4a5568;
+  --color-success: #5c7a52;
+
+  /* Semantic aliases */
+  --bg: var(--color-basalt);
+  --bg-elevated: var(--color-shale);
+  --text-main: var(--color-parchment);
+  --text-muted: #9a9084;
+  --text-on-light: var(--color-ink);
+  --accent: var(--color-brass);
+  --accent-deep: var(--color-brass-deep);
+  --accent-focus: var(--color-verdigris);
+  --border-default: var(--color-brass-deep);
+  --border-subtle: rgba(138, 111, 71, 0.35);
+
+  /* Geological activity (simulator) */
+  --color-convergent: #9b2335;
+  --color-divergent: #b87333;
+  --color-transform: #8a6f47;
+
+  /* Typography */
+  --font-display: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  --font-structure: 'Josefin Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-data: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Type scale (base 16px, ratio 1.25) */
+  --text-xs: 11px;
+  --text-sm: 13px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 25px;
+  --text-2xl: 31px;
+  --text-3xl: 39px;
+  --text-display: 49px;
+
+  /* Spacing (strata unit = 8px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --margin-manuscript: 48px;
+
+  /* Layout */
+  --rule-brass: 3px;
+  --radius-none: 0px;
+  --radius-mechanical: 2px;
+
+  /* Motion */
+  --ease-strata: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-survey: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-micro: 80ms;
+  --duration-standard: 200ms;
+  --duration-tectonic: 800ms;
+
+  /* Depth — no shadows */
+  --shadow-none: none;
+}

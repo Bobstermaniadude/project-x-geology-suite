@@ -1,0 +1,178 @@
+/* Geology Suite — Hub landing page */
+
+body.hub-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+body.hub-page.surface-basalt::before {
+  z-index: 0;
+}
+
+.hub-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 90%;
+  margin: var(--space-8) auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hub-header {
+  margin-bottom: var(--space-5);
+  animation: hub-fade-down var(--duration-tectonic) var(--ease-strata);
+}
+
+.hub-brand {
+  font-family: var(--font-structure);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+  margin-bottom: var(--space-2);
+  display: block;
+}
+
+.hub-title {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+  color: var(--color-parchment);
+}
+
+.hub-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--text-muted);
+  max-width: 620px;
+  margin: var(--space-4) auto var(--space-7) auto;
+  line-height: 1.6;
+  animation: hub-fade-in calc(var(--duration-tectonic) + 200ms) var(--ease-strata);
+}
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-5);
+  width: 100%;
+  max-width: 1000px;
+  animation: hub-fade-up var(--duration-tectonic) var(--ease-strata);
+}
+
+/* Specimen cards — not floating cards */
+.hub-card {
+  background: var(--color-shale);
+  border: 1px solid var(--border-default);
+  border-top: var(--rule-brass) solid var(--color-brass);
+  padding: var(--space-6) var(--space-5);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  transition:
+    border-color var(--duration-micro) var(--ease-survey),
+    background var(--duration-micro) var(--ease-survey);
+}
+
+.hub-card.active:hover {
+  border-color: var(--color-brass);
+  background: #312b24;
+}
+
+.hub-card.disabled {
+  opacity: 0.55;
+}
+
+.hub-card.disabled:hover {
+  border-color: var(--border-default);
+  background: var(--color-shale);
+}
+
+.hub-card-header {
+  margin-bottom: var(--space-5);
+}
+
+.hub-card-header .badge-stamp {
+  margin-bottom: var(--space-5);
+}
+
+.hub-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin: 0 0 var(--space-3) 0;
+  color: var(--color-parchment);
+}
+
+.hub-card p {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.hub-card .btn-primary,
+.hub-card .btn-secondary {
+  width: 100%;
+  margin-top: var(--space-5);
+}
+
+.hub-card.active .btn-primary {
+  background: var(--color-brass);
+}
+
+.hub-card.disabled .btn-secondary {
+  width: 100%;
+}
+
+@keyframes hub-fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hub-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hub-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .hub-title {
+    font-size: var(--text-3xl);
+  }
+
+  .hub-container {
+    margin: var(--space-6) auto;
+  }
+}

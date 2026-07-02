@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tectonic Plate Textures - Geology Suite</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Josefin+Sans:wght@500;600&family=Libre+Baskerville:wght@400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/shared/tokens.css" />
+  <link rel="stylesheet" href="/shared/base.css" />
+  <link rel="stylesheet" href="/shared/plates.css" />
+</head>
+<body class="plates-page surface-basalt">
+  <div class="plates-container">
+    <header class="plates-header">
+      <div class="plates-header-row">
+        <a href="./index.html" class="plates-back">&larr; Suite Hub</a>
+        <div class="plates-title-wrap">
+          <h1 class="plates-title">Plate Textures</h1>
+          <p class="plates-subtitle">
+            Individual tectonic plate textures in equirectangular projection.
+            Download for use as transparent overlays on 3D globe models.
+          </p>
+        </div>
+      </div>
+    </header>
+    <div id="plate-lists"></div>
+  </div>
+
+  <script>
+    const PLATES = [
+      'pacific', 'north_american', 'eurasian', 'african', 'antarctic',
+      'australian', 'south_american', 'nazca', 'cocos', 'caribbean',
+      'arabian', 'philippine_sea', 'indian', 'scotia', 'juan_de_fuca', 'somali'
+    ];
+    const PLATE_LABELS = [
+      'Pacific', 'North American', 'Eurasian', 'African', 'Antarctic',
+      'Australian', 'South American', 'Nazca', 'Cocos', 'Caribbean',
+      'Arabian', 'Philippine Sea', 'Indian', 'Scotia', 'Juan de Fuca', 'Somali'
+    ];
+    const RESOLUTIONS = [
+      { key: '2k', label: '2K', w: 2048, h: 1024 },
+      { key: '4k', label: '4K', w: 4000, h: 2000 },
+      { key: '8k', label: '8K', w: 10800, h: 5400 },
+    ];
+
+    const container = document.getElementById('plate-lists');
+    for (const res of RESOLUTIONS) {
+      const section = document.createElement('div');
+      section.className = 'plates-section';
+      section.innerHTML = `
+        <h2>${res.label} (${res.w}&times;${res.h})</h2>
+        <div class="res-desc">Equirectangular · RGBA · transparent background</div>
+        <div class="plate-grid" id="grid-${res.key}"></div>
+      `;
+      container.appendChild(section);
+
+      const grid = section.querySelector('.plate-grid');
+
+      const worldItem = document.createElement('div');
+      worldItem.className = 'world-item';
+      worldItem.innerHTML = `
+        <span><strong>World Map + Boundaries</strong> &mdash; earth texture with plate boundaries overlaid</span>
+        <a href="./plate_outputs/${res.key}/world_map_with_boundaries.png" download>Download ${res.label}</a>
+      `;
+      grid.appendChild(worldItem);
+
+      for (let i = 0; i < PLATES.length; i++) {
+        const item = document.createElement('div');
+        item.className = 'plate-item';
+        const filename = `${PLATES[i]}_plate.png`;
+        item.innerHTML = `
+          <a href="./plate_outputs/${res.key}/${filename}" download>
+            <div class="plate-name">${PLATE_LABELS[i]}</div>
+            <div class="file-size">${res.label} · PNG</div>
+          </a>
+        `;
+        grid.appendChild(item);
+      }
+    }
+  </script>
+</body>
+</html>
